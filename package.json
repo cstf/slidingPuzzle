@@ -2,11 +2,12 @@
   "name": "puzzle",
   "version": "0.0.1",
   "author": "chani stefanski",
-   "devDependencies": {
-    "http-server": "^0.9.0"
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "bootstrap":"3.3.6"
   },
   "scripts": {
     "prestart": "npm install",
     "start": "http-server . -a localhost -p 8000 -c-1"
-}
+	}
 }

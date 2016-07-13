@@ -7,9 +7,9 @@
      	return {
      		restrict: 'EA',
      		replace: true,
-     		template: '<div tabindex="0" ng-keydown="move($event)" ><button type="button" class="btn btn-info" ng-click="startGame()">START</button><table  class="sliding-puzzle" ng-class="{\'puzzle-solved\': isSolved()}">' +
+     		template: '<div tabindex="0" ng-keydown="move($event)" ><div class="btn-start"><button type="button" class="btn btn-info" ng-click="startGame()">START</button></div><table  class="sliding-puzzle" ng-class="{\'puzzle-solved\': isSolved()}">' +
      		'<tr ng-repeat="($row, row) in grid">' +
-     		'<td ng-repeat="($col, piece) in row" ng-style="piece.style" ng-class="{\'puzzle-empty\': piece.empty}" title="{{piece.id}}"></td>' +
+     		'<td ng-animate=" '+'animate'+' " ng-repeat="($col, piece) in row" ng-style="piece.style" ng-class="{\'puzzle-empty\': piece.empty}" title="{{piece.id}}"></td>' +
      		'</tr>' +
      		'</table></div>',
      		scope: {
@@ -20,7 +20,11 @@
      			moves = 0,image;
      			image = new Image();
      			image.src = 'images/viber.png';
-
+                    image.onload = function() {
+                        scope.$apply(function() {
+                            createPieces();
+                        });
+                    };
      			scope.grid = [];
      			var size = scope.size.split('x');
      			rows = size[0];

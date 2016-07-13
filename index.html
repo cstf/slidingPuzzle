@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>puzzle</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/slidingPuzzle.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="lib/angular-ui-router.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+
+</head>
+<body ng-app="puzzle" ng-controller="slidingAdvancedCtrl">
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">Puzzle</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="puzzle">Play</a></li>
+        <li><a ui-sref="results">Leader Board</a></li>
+    </ul>
+</nav>	
+<div class="container">
+
+    <div ui-view></div>
+
+</div></body>
+	</html>
